@@ -3,20 +3,18 @@ import java.util.Arrays;
 
 public class LCS {
 	private String[] word;
-	private int[] result;
 
 	LCS(String[] word) {
 		this.word = word;
-		result = new int[word.length];
 	}
 
 	int[] LCSCount(String x) {
-		// 目标单词与长度与它小于等于3的单词计算LCS
+		// 目标单词与长度与它小于等于2的单词计算LCS
+		int[] result = new int[word.length];
 		for (int i = 0; i < word.length; i++) {
-			if (Math.abs(x.length() - this.word[i].length()) <= 3) {
+			if (Math.abs(x.length() - this.word[i].length()) <= 2) {
 				result[i] = this.calc(x, this.word[i]);
 			}
-
 		}
 		return getMax(result);
 	}
@@ -57,6 +55,7 @@ public class LCS {
 		for (int i = 0; i < tmp.size(); i++) {
 			result[i] = (int) tmp.get(i);
 		}
+		tmp.clear();
 		return result;
 	}
 }
