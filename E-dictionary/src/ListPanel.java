@@ -25,6 +25,7 @@ public class ListPanel extends JPanel {
 	public void movePosition(int index, int length) {
 		scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum());
 		scrollPane.getVerticalScrollBar()
-				.setValue((int) (double) scrollPane.getVerticalScrollBar().getMaximum() / length * index);
+				.setValue((int) (double) scrollPane.getVerticalScrollBar().getMaximum() / length * index
+						- scrollPane.getVerticalScrollBar().getVisibleAmount() / 2);
 	}
 }

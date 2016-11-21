@@ -45,5 +45,4 @@ public class DescriptionPanel extends JPanel {
 		}
 		jtaDescription.setText(out);
 	}
-
 }
